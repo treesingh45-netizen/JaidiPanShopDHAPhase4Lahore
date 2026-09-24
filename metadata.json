@@ -1,0 +1,6 @@
+{
+  "name": "Jaidi Pan Shop — DHA Phase 4 Lahore",
+  "description": "Order online from Jaidi Pan Shop DHA Phase 4, Lahore. Explore fresh juices, shakes, ice cream, falooda, desserts, and place orders directly via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

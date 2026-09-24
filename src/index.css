@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-signature: "Alex Brush", cursive;
+  --font-seasons: "Bebas Neue", "Montserrat", "Lilita One", sans-serif;
+  --font-funky: "Lilita One", "Titan One", "Fredoka", cursive, sans-serif;
+  --font-bubbly: "Titan One", "Lilita One", cursive, sans-serif;
+  --color-jaidi-red: #D90000;
+  --color-jaidi-darkred: #A80000;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #111111;
+  background-color: #F7F7F7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+}
+
+.font-signature {
+  font-family: var(--font-signature);
+}
+
+.font-seasons {
+  font-family: var(--font-seasons);
+}
+
+.font-funky {
+  font-family: var(--font-funky);
+}
+
+.font-bubbly {
+  font-family: var(--font-bubbly);
+}
+
+/* Seasons Text Style: High impact, crisp, bold Red & White typography */
+.seasons-text-white {
+  font-family: var(--font-seasons);
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
+}
+
+.seasons-text-red {
+  font-family: var(--font-seasons);
+  color: #D90000;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  text-shadow: 0 3px 16px rgba(217, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Red and White 3D button effects */
+.funky-text-white-3d {
+  font-family: var(--font-seasons);
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  text-shadow:
+    0 2px 0 #ffffff,
+    0 4px 10px rgba(0, 0, 0, 0.9);
+}
+
+.funky-text-red-3d {
+  font-family: var(--font-seasons);
+  color: #D90000;
+  letter-spacing: 0.03em;
+  text-shadow:
+    0 2px 0 #a80000,
+    0 4px 14px rgba(217, 0, 0, 0.45);
+}
+
+.funky-shadow-badge {
+  box-shadow: 0 4px 0 #000000, 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.funky-btn-3d {
+  transition: all 0.15s ease-out;
+  box-shadow: 0 5px 0 #800000, 0 10px 18px rgba(0, 0, 0, 0.4);
+}
+.funky-btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #800000, 0 14px 22px rgba(0, 0, 0, 0.45);
+}
+.funky-btn-3d:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #800000, 0 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.funky-btn-secondary-3d {
+  transition: all 0.15s ease-out;
+  box-shadow: 0 5px 0 #2a2a2a, 0 10px 18px rgba(0, 0, 0, 0.35);
+}
+.funky-btn-secondary-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #2a2a2a, 0 14px 22px rgba(0, 0, 0, 0.4);
+}
+.funky-btn-secondary-3d:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #2a2a2a, 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar for horizontal category tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth continuous horizontal marquee animations */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-smooth {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-smooth:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-reverse 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
