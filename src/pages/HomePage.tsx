@@ -34,43 +34,61 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-12 sm:space-y-16">
-      {/* 1. HERO SECTION - Minimal & Elegant Cafe Style */}
-      <section className="relative bg-[#0d0d0d] text-white overflow-hidden rounded-b-3xl sm:rounded-b-[2.5rem]">
-        {/* Atmospheric Food Photography Background */}
-        <div className="absolute inset-0">
+      {/* 1. HERO SECTION - Premium Cafe Style with Creamy Shakes Atmospheric Background */}
+      <section className="relative bg-[#111111] text-white overflow-hidden rounded-b-3xl sm:rounded-b-[2.5rem] border-b border-neutral-800">
+        {/* Background Creamy Shakes Image */}
+        <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1800&q=85"
-            alt="Jaidi Pan Shop Ambience & Refreshments"
-            className="w-full h-full object-cover object-center opacity-40"
+            src="/src/assets/images/creamy_shakes_hero_1790316510682.jpg"
+            alt="Artisanal Creamy Shakes & Desserts"
+            className="w-full h-full object-cover object-center scale-105 transform motion-safe:transition-transform duration-1000"
+            referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/75 to-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          {/* Multi-layered dark gradients for readability & luxury mood */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-[#111111]/90" />
+          <div className="absolute inset-0 bg-radial from-transparent via-[#111111]/60 to-[#111111]" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-28 text-center">
-          <div className="flex flex-col items-center space-y-4 sm:space-y-6">
-            {/* Small Elegant Overline */}
-            <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] text-neutral-300 uppercase">
-              WELCOME TO JAIDI PAN SHOP · DHA PHASE 4
-            </p>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-28 text-center">
+          <div className="flex flex-col items-center space-y-5 sm:space-y-6">
+            {/* Distinctive Stylized Welcome Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-neutral-900/90 border border-neutral-700/80 shadow-md backdrop-blur-md hover:border-[#D90000]/50 transition-all duration-300">
+              <span className="relative flex h-2.5 w-2.5 items-center justify-center shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D90000] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D90000]" />
+              </span>
+              <div className="flex items-center gap-2 text-xs sm:text-sm tracking-wider">
+                <span className="font-signature text-base sm:text-xl text-neutral-300 select-none -mb-0.5">
+                  Welcome to
+                </span>
+                <span className="font-extrabold text-white tracking-[0.22em] uppercase font-sans">
+                  JAIDI PAN SHOP
+                </span>
+                <span className="text-neutral-600 font-light hidden sm:inline">·</span>
+                <span className="text-[11px] sm:text-xs font-semibold text-[#D90000] tracking-widest uppercase hidden sm:inline">
+                  DHA Phase 4 Lahore
+                </span>
+              </div>
+            </div>
 
-            {/* Large Elegant Serif Headline (Bruin Cafe Style) */}
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-white tracking-tight leading-[1.15] drop-shadow-lg max-w-3xl">
-              Enjoy Fresh Flavours & Bold Taste
+            {/* Large Elegant Headline */}
+            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.12] max-w-3xl">
+              <span className="block text-white">Fresh Flavours &amp;</span>
+              <span className="block text-[#D90000] italic font-serif mt-1 sm:mt-2">Bold Taste</span>
             </h1>
 
-            {/* Clean, Muted Descriptive Text */}
-            <p className="text-xs sm:text-base text-neutral-300 font-light leading-relaxed max-w-xl mx-auto drop-shadow-sm">
+            {/* Clean, Muted Descriptive Text Centered */}
+            <p className="text-sm sm:text-base lg:text-lg text-neutral-300 font-light leading-relaxed max-w-xl mx-auto">
               Explore refreshing cold juices, thick creamy shakes, authentic falooda, royal paan,
               and signature dessert bowls handcrafted fresh every day in Lahore.
             </p>
 
             {/* Clean, Minimalist Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3.5 pt-3">
+            <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
               <button
                 type="button"
                 onClick={scrollToOrder}
-                className="bg-[#D90000] hover:bg-[#b80000] text-white font-medium text-xs sm:text-sm tracking-wider uppercase px-7 py-3 rounded-lg transition-all duration-200 cursor-pointer shadow-lg hover:shadow-red-900/30"
+                className="bg-[#D90000] hover:bg-[#b80000] text-white font-semibold text-xs sm:text-sm tracking-wider uppercase px-8 py-3.5 rounded-xl transition-all duration-200 cursor-pointer shadow-lg hover:shadow-red-900/30"
               >
                 Order Now
               </button>
@@ -81,7 +99,7 @@ export const HomePage: React.FC = () => {
                   setActivePage('menu');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="bg-white hover:bg-neutral-200 text-neutral-900 font-medium text-xs sm:text-sm tracking-wider uppercase px-7 py-3 rounded-lg transition-all duration-200 cursor-pointer shadow-lg"
+                className="bg-white hover:bg-neutral-100 text-neutral-900 font-semibold text-xs sm:text-sm tracking-wider uppercase px-8 py-3.5 rounded-xl transition-all duration-200 cursor-pointer shadow-lg"
               >
                 Explore Menu
               </button>

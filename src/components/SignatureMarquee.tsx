@@ -82,10 +82,6 @@ export const SignatureMarquee: React.FC<SignatureMarqueeProps> = ({
       className={`relative w-full overflow-hidden py-3 select-none ${themeStyles[variant]} ${className}`}
       aria-label="Jaidi Pan Shop Signature Announcements"
     >
-      {/* Subtle edge fade overlays for infinite scroll illusion */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 z-10 bg-gradient-to-r from-[#111111] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 z-10 bg-gradient-to-l from-[#111111] to-transparent pointer-events-none" />
-
       {/* Scrolling Content Track (duplicated twice for infinite loop) */}
       <div className={`${animClass} flex items-center`}>
         {/* Track 1 */}
@@ -94,11 +90,11 @@ export const SignatureMarquee: React.FC<SignatureMarqueeProps> = ({
             <div key={`track1-${index}`} className="flex items-center shrink-0">
               <div className="flex items-center gap-3 px-5 sm:px-7">
                 {/* Official Jaidi Brand Emblem */}
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-[#D90000] overflow-hidden shadow-xs shrink-0 bg-black flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden shadow-xs shrink-0 bg-[#D90000] flex items-center justify-center">
                   <img
                     src={JAIDI_ICON_URL}
                     alt="Jaidi Pan Shop"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-105"
                     loading="lazy"
                   />
                 </div>
@@ -134,11 +130,11 @@ export const SignatureMarquee: React.FC<SignatureMarqueeProps> = ({
             <div key={`track2-${index}`} className="flex items-center shrink-0">
               <div className="flex items-center gap-3 px-5 sm:px-7">
                 {/* Official Jaidi Brand Emblem */}
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-[#D90000] overflow-hidden shadow-xs shrink-0 bg-black flex items-center justify-center">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden shadow-xs shrink-0 bg-[#D90000] flex items-center justify-center">
                   <img
                     src={JAIDI_ICON_URL}
                     alt="Jaidi Pan Shop"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-105"
                     loading="lazy"
                   />
                 </div>

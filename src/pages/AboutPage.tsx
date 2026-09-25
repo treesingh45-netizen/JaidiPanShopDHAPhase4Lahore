@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
             <span>DHA Phase 4 · Lahore</span>
           </div>
 
-          <div className="font-signature text-3xl sm:text-4xl text-[#F6C343] font-normal tracking-wide drop-shadow-xs select-none">
+          <div className="font-signature text-3xl sm:text-4xl text-white font-normal tracking-wide drop-shadow-sm select-none">
             A Tradition of Pure Flavour
           </div>
 

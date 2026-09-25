@@ -158,51 +158,53 @@ export const ContactPage: React.FC = () => {
           </div>
 
           <a
-            href="https://maps.google.com/?q=DHA+Phase+4+Sector+CCA+Lahore"
+            href="https://www.google.com/maps/place/Jaidi+Pan+Shop/@31.4822212,74.3965288,17z/data=!3m1!4b1!4m6!3m5!1s0x391905fd0e9e1087:0x4b054f062cd24b52!8m2!3d31.4822212!4d74.3965288!16s%2Fg%2F1tf1944p"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#D90000] hover:bg-[#A80000] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 shrink-0 cursor-pointer self-start sm:self-auto"
+            className="bg-[#D90000] hover:bg-[#A80000] text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 shrink-0 cursor-pointer self-start sm:self-auto shadow-sm"
           >
             <Compass className="w-4 h-4" />
             <span>Get Directions</span>
           </a>
         </div>
 
-        {/* Styled Simulated Interactive Map View with Pin */}
-        <div className="relative w-full h-80 sm:h-96 bg-[#E5E3DF] overflow-hidden flex items-center justify-center">
-          {/* Map background grid pattern */}
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage:
-                'radial-gradient(#9ca3af 1px, transparent 1px), radial-gradient(#9ca3af 1px, #e5e3df 1px)',
-              backgroundSize: '24px 24px',
-              backgroundPosition: '0 0, 12px 12px',
-            }}
+        {/* Real Interactive Google Maps Embed with Pin & Info Overlay */}
+        <div className="relative w-full h-80 sm:h-96 md:h-[420px] bg-neutral-100 overflow-hidden">
+          <iframe
+            title="Jaidi Pan Shop DHA Phase 4 Lahore Location Map"
+            src="https://maps.google.com/maps?q=31.4822212,74.3965288+(Jaidi+Pan+Shop)&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+            className="w-full h-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
 
-          {/* Road lines simulation */}
-          <div className="absolute w-full h-4 bg-white/80 top-1/2 -translate-y-1/2 shadow-xs" />
-          <div className="absolute h-full w-4 bg-white/80 left-1/2 -translate-x-1/2 shadow-xs" />
-          <div className="absolute w-3/4 h-2 bg-amber-100 top-1/3 rotate-12" />
-
-          {/* Location Pin */}
-          <div className="relative z-10 flex flex-col items-center">
-            <div className="bg-[#D90000] text-white p-3 rounded-full shadow-xl animate-bounce">
-              <MapPin className="w-7 h-7 stroke-[2.5]" />
+          {/* Floating Location Quick Info Card */}
+          <div className="absolute top-3 left-3 z-10 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl shadow-lg border border-neutral-200 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-[#D90000] text-white flex items-center justify-center shrink-0 shadow-xs">
+              <MapPin className="w-4 h-4" />
             </div>
-            <div className="mt-2 bg-white px-3.5 py-1.5 rounded-xl shadow-lg border border-neutral-200 text-center">
-              <span className="font-extrabold text-xs text-neutral-900 block font-display">
+            <div>
+              <span className="font-bold text-xs text-neutral-900 block font-display">
                 JAIDI PAN SHOP
               </span>
-              <span className="text-[10px] text-neutral-500 font-semibold">
-                DHA Phase 4, Sector CCA
+              <span className="text-[11px] text-neutral-600 font-medium">
+                DHA Phase 4, Sector CCA, Lahore
               </span>
             </div>
+            <a
+              href="https://www.google.com/maps/place/Jaidi+Pan+Shop/@31.4822212,74.3965288,17z/data=!3m1!4b1!4m6!3m5!1s0x391905fd0e9e1087:0x4b054f062cd24b52!8m2!3d31.4822212!4d74.3965288!16s%2Fg%2F1tf1944p"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 text-[#D90000] hover:text-[#A80000] text-xs font-semibold underline underline-offset-2 flex items-center gap-1"
+            >
+              <span>View Map</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
 
-          <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] text-neutral-500 font-mono">
-            31.4720° N, 74.3780° E
+          <div className="absolute bottom-3 right-3 z-10 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] text-neutral-600 font-mono shadow-xs border border-neutral-200">
+            31.4822° N, 74.3965° E
           </div>
         </div>
       </section>

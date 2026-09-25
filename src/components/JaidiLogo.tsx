@@ -17,48 +17,58 @@ export const JaidiLogo: React.FC<JaidiLogoProps> = ({
   const [imgError, setImgError] = useState(false);
 
   const iconSizes = {
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10',
-    lg: 'w-14 h-14',
+    sm: 'w-7 h-7 sm:w-8 sm:h-8',
+    md: 'w-9 h-9 sm:w-10 sm:h-10',
+    lg: 'w-12 h-12 sm:w-14 sm:h-14',
   };
 
   const textSizes = {
-    sm: 'text-base',
-    md: 'text-xl',
-    lg: 'text-2xl',
+    sm: 'text-xs sm:text-sm md:text-base',
+    md: 'text-sm sm:text-base md:text-lg lg:text-xl',
+    lg: 'text-lg sm:text-xl md:text-2xl',
   };
 
+  const isWhite = variant === 'white';
+
   return (
-    <div className={`flex items-center gap-2.5 select-none ${className}`}>
-      {/* Brand Icon Mark using the official Jaidi image */}
+    <div className={`flex items-center gap-2 sm:gap-2.5 select-none whitespace-nowrap shrink-0 ${className}`}>
+      {/* Brand Icon Mark - Pure styling without any black line or dark border */}
       <div
-        className={`${iconSizes[size]} rounded-xl flex items-center justify-center p-0.5 shadow-sm shrink-0 relative overflow-hidden bg-neutral-900 border border-white/20`}
+        className={`${iconSizes[size]} rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden ${
+          isWhite
+            ? 'bg-white shadow-sm'
+            : 'bg-[#D90000] shadow-sm'
+        }`}
         title="Jaidi Pan Shop DHA Phase 4"
       >
         {!imgError ? (
           <img
             src={JAIDI_ICON_URL}
             alt="Jaidi Pan Shop Icon"
-            className="w-full h-full object-cover rounded-[10px]"
+            className="w-full h-full object-cover rounded-xl"
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full bg-[#D90000] flex items-center justify-center rounded-[10px]">
+          <div
+            className={`w-full h-full flex items-center justify-center rounded-xl p-1.5 ${
+              isWhite ? 'bg-white text-[#D90000]' : 'bg-[#D90000] text-white'
+            }`}
+          >
             <svg
               viewBox="0 0 100 100"
-              className="w-full h-full p-1"
-              fill="none"
+              className="w-full h-full"
+              fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
+              {/* Stylized Jaidi J Emblem with Crown */}
+              <circle cx="50" cy="50" r="46" fill="currentColor" fillOpacity={isWhite ? "0.08" : "0.15"} />
               <path
-                d="M 52 22 L 72 22 C 72 25 70 27 67 27 L 61 27 L 61 62 C 61 74 54 82 40 82 C 28 82 22 74 22 66 C 22 58 28 54 34 54 C 38 54 41 57 41 61 C 41 66 38 69 34 69 C 32 69 31 68 30 67 C 32 72 36 75 42 75 C 49 75 53 70 53 60 L 53 27 L 46 27 C 43 27 41 25 41 22 Z"
-                fill="white"
+                d="M 52 20 L 72 20 C 72 23 70 25 67 25 L 61 25 L 61 60 C 61 72 54 80 40 80 C 28 80 22 72 22 64 C 22 56 28 52 34 52 C 38 52 41 55 41 59 C 41 64 38 67 34 67 C 32 67 31 66 30 65 C 32 70 36 73 42 73 C 49 73 53 68 53 58 L 53 25 L 46 25 C 43 25 41 23 41 20 Z"
+                fill={isWhite ? '#D90000' : '#FFFFFF'}
               />
               <path
-                d="M 44 38 C 44 35 48 33 54 33 C 60 33 63 35 63 38 C 63 42 59 44 54 44 C 49 44 46 42 46 40"
-                stroke="#FFD700"
-                strokeWidth="2"
-                strokeLinecap="round"
+                d="M 38 28 L 50 16 L 62 28 L 56 30 L 50 24 L 44 30 Z"
+                fill={isWhite ? '#D90000' : '#FFD700'}
               />
             </svg>
           </div>
@@ -66,17 +76,17 @@ export const JaidiLogo: React.FC<JaidiLogoProps> = ({
       </div>
 
       {variant !== 'mark' && (
-        <div className="flex flex-col leading-none">
+        <div className="flex flex-col leading-none whitespace-nowrap">
           <span
-            className={`${textSizes[size]} font-display font-bold tracking-tight uppercase ${
-              variant === 'white' ? 'text-white' : 'text-[#111111]'
+            className={`${textSizes[size]} font-display font-bold tracking-tight uppercase whitespace-nowrap ${
+              isWhite ? 'text-white' : 'text-[#111111]'
             }`}
           >
             Jaidi Pan Shop
           </span>
           <span
-            className={`text-[10px] tracking-wider font-semibold uppercase mt-0.5 ${
-              variant === 'white' ? 'text-white/80' : 'text-[#D90000]'
+            className={`text-[9px] sm:text-[10px] tracking-wider font-semibold uppercase mt-0.5 whitespace-nowrap ${
+              isWhite ? 'text-white/85' : 'text-[#D90000]'
             }`}
           >
             DHA Phase 4 · Lahore

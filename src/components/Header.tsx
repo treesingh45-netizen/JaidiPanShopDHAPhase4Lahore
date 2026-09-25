@@ -38,61 +38,12 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200 transition-all shadow-xs">
-      {/* 1. Top Utility Bar */}
-      <div className="bg-[#111111] text-white/90 text-xs py-1.5 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D90000] animate-pulse shrink-0" />
-            <span className="font-medium tracking-wide">
-              Welcome to Jaidi Pan Shop — DHA Phase 4, Lahore
-            </span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-5 text-neutral-300">
-            <a
-              href="tel:03014002475"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#D90000]" />
-              <span className="tabular-nums">Call: 0301 4002475</span>
-            </a>
-            <span className="text-neutral-600">|</span>
-            <a
-              href="https://wa.me/923014002475"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#D90000] transition-colors"
-            >
-              WhatsApp
-            </a>
-            <span className="text-neutral-600">|</span>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#D90000] transition-colors"
-            >
-              Instagram
-            </a>
-            <span className="text-neutral-600">|</span>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#D90000] transition-colors"
-            >
-              Facebook
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. Main Header */}
+      {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3 sm:gap-6">
         {/* Left: Brand Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D90000] rounded-lg"
+          className="cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D90000] rounded-lg shrink-0 flex items-center"
           aria-label="Jaidi Pan Shop Home"
         >
           <JaidiLogo size="md" />
