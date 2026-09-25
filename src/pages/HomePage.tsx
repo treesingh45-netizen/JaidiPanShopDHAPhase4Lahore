@@ -9,6 +9,7 @@ import {
   Layers,
   HeartHandshake,
 } from 'lucide-react';
+import creamyShakesHero from '../assets/images/creamy_shakes_hero_1790316510682.jpg';
 import { useStore } from '../context/StoreContext';
 import { CATEGORIES } from '../data/menuData';
 import { OrderTypeSelector } from '../components/OrderTypeSelector';
@@ -37,16 +38,15 @@ export const HomePage: React.FC = () => {
       {/* 1. HERO SECTION - Premium Cafe Style with Creamy Shakes Atmospheric Background */}
       <section className="relative bg-[#111111] text-white overflow-hidden rounded-b-3xl sm:rounded-b-[2.5rem] border-b border-neutral-800">
         {/* Background Creamy Shakes Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="/src/assets/images/creamy_shakes_hero_1790316510682.jpg"
+            src={creamyShakesHero}
             alt="Artisanal Creamy Shakes & Desserts"
-            className="w-full h-full object-cover object-center scale-105 transform motion-safe:transition-transform duration-1000"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover object-center opacity-65 scale-100"
           />
-          {/* Multi-layered dark gradients for readability & luxury mood */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-[#111111]/90" />
-          <div className="absolute inset-0 bg-radial from-transparent via-[#111111]/60 to-[#111111]" />
+          {/* Balanced gradient overlays for high contrast text and vibrant shake visuals */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-28 text-center">
